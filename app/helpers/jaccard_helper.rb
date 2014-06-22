@@ -1,0 +1,2 @@
+module JaccardHelper
+end

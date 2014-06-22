@@ -1,0 +1,23 @@
+<h1>Ingresa tu consulta</h1>
+<%= form_tag :action => 'consultas' do %>
+<p>Preguntar/Consultar:
+<%= text_field_tag 'consulta' %></p>
+<%= submit_tag 'Enviar' %>
+<% end %>
+
+<h2> Clasificacion </h2>
+<table BORDER=1 WIDTH=1000 >
+<tr>
+  <td><strong>Soporte Tecnico</strong></td>
+  <td><strong>Comercial</strong></td>
+</tr>
+<% @mayor.times do |i| %>
+<tr>
+	<td> <%= @lista_soporte[i] %> </td>
+	<td> <%= @lista_comercial[i] %> </td>
+</tr>
+<% end %>
+</table>
+
+
+<%= @resultado %>

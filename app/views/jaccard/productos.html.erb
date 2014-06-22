@@ -1,0 +1,31 @@
+<h1> Ingresar Producto </h1>
+<%= form_tag :action => 'productos' do %>
+<p>Nombre:
+<%= text_field_tag 'nombre_producto' %></p>
+<p>Descripcion:
+<%= text_field_tag 'descripcion_producto' %></p>
+<%= submit_tag 'Guardar' %>
+<% end %>
+<p> <strong> <%= @mensaje_error %> </strong> </p>
+<h1> Productos relacionados </h1>
+
+<table BORDER=1 WIDTH=1000 >
+<tr>
+  <td><strong>ID</strong></td>
+  <td><strong>Nombre</strong></td>
+  <td><strong>Descripcion</strong></td>
+  <td><strong>Coeficiente Jaccard</strong></td>
+</tr>
+ 
+ <% @arreglo.length.times do |i| %>
+	<% if @arreglo[i][3] > 0 %>
+	<tr>
+		<td> <%= @arreglo[i][0] %> </td>
+		<td> <%= @arreglo[i][1] %> </td>
+		<td> <%= @arreglo[i][2] %> </td>
+		<td> <%= @arreglo[i][3] %> </td>
+	</tr>
+	<% end %>
+<% end %>
+
+</table>
