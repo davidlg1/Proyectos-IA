@@ -10,8 +10,8 @@ class JaccardController < ApplicationController
     end
 
     @productos = Producto.all
-    @ultimo = Producto.last.descripcion
-    tmp2 = @ultimo.split(',')
+    @ultimo = Producto.last
+    tmp2 = @ultimo.descripcion.split(',')
     @arreglo = []
     @i=0
     @productos.each do |p|
